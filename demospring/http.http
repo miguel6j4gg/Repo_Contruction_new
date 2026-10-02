@@ -1,0 +1,18 @@
+### Registrar pedido
+POST https://studious-barnacle-g459w7pr6wxxhvj99-8080.app.github.dev/pedido/nuevo
+Content-Type: application/json
+
+{
+ "items":[
+   {
+     "idProducto": 1004,
+     "cantidad": 2,
+     "precioUnitario":3000
+   },
+   {
+     "idProducto": 1005,
+     "cantidad": 3,
+     "precioUnitario":50
+   }
+ ]
+}
