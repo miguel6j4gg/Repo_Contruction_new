@@ -1,18 +1,36 @@
-### Registrar pedido
-POST https://studious-barnacle-g459w7pr6wxxhvj99-8080.app.github.dev/pedido/nuevo
+### 1. Registrar un nuevo Grupo Electrógeno
+POST https://humble-space-computing-machine-q7pxjppw65xph46jp-8080.app.github.dev/producto/marca/1001/nuevo
 Content-Type: application/json
 
 {
- "items":[
-   {
-     "idProducto": 1004,
-     "cantidad": 2,
-     "precioUnitario":3000
-   },
-   {
-     "idProducto": 1005,
-     "cantidad": 3,
-     "precioUnitario":50
-   }
- ]
+  "nombre": "Miguel ",
+  "descripcion": "Miguel Andres Flavio Ocharan Coaquira",
+  "precio": 600.00,
+  "stock": 3
+}
+
+### 2. Ajustar stock (para productos no disponibles o accesorios que acompañan)
+POST https://humble-space-computing-machine-q7pxjppw65xph46jp-8080.app.github.dev/producto/stock/ajuste
+Content-Type: application/json
+
+{
+  "idProducto": 1004,
+  "stock": 0
+}
+
+### 3. Consultar grupo electrógeno o accesorio por id
+GET https://humble-space-computing-machine-q7pxjppw65xph46jp-8080.app.github.dev/producto/1007
+
+### 4. Registrar pedido de Grupo Electrógeno (Probar stock insuficiente)
+POST https://humble-space-computing-machine-q7pxjppw65xph46jp-8080.app.github.dev/pedido/nuevo
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "idProducto": 1022,
+      "cantidad": 10,
+      "precioUnitario": 600.00
+    }
+  ]
 }

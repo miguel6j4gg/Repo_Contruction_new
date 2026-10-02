@@ -22,6 +22,9 @@ public class Producto {
     @Column(nullable = false, length = 150)
     private String nombre;
 
+    @Column(nullable = false)
+    private Integer stock;
+
     @Column(length = 500)
     private String descripcion;
 
@@ -50,6 +53,14 @@ public class Producto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
     }
 
     public String getDescripcion() {
